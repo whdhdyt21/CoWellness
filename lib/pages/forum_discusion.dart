@@ -38,10 +38,10 @@ class _ForumDiscusionState extends State<ForumDiscusion> {
     return SafeArea(
       child: Scaffold(
           appBar: AppBar(
-            title: Center(
+            title: const Center(
               child: Text('FORUM', style: TextStyle(color: Colors.white)),
             ),
-            backgroundColor: Color.fromARGB(255, 17, 67, 115),
+            backgroundColor: const Color.fromARGB(255, 17, 67, 115),
             leading: IconButton(
               onPressed: () {
                 // Tambahkan aksi yang sesuai ketika ikon profil diklik
@@ -107,7 +107,7 @@ class _ForumDiscusionState extends State<ForumDiscusion> {
                     ],
                   ),
                 ),
-                Text("Logged in as:" + currentUser.email!,
+                Text("Logged in as:${currentUser.email!}",
                     style:
                         const TextStyle(color: Color.fromARGB(255, 0, 0, 0))),
                 const SizedBox(

@@ -6,8 +6,8 @@ class WallPost extends StatelessWidget {
   final String message;
   final Timestamp timestamp;
 
-  WallPost(
-      {required this.user, required this.message, required this.timestamp});
+  const WallPost(
+      {super.key, required this.user, required this.message, required this.timestamp});
 
   @override
   Widget build(BuildContext context) {
@@ -21,11 +21,11 @@ class WallPost extends StatelessWidget {
           children: [
             Row(
               children: [
-                Icon(Icons.person, size: 16),
-                SizedBox(width: 8.0),
+                const Icon(Icons.person, size: 16),
+                const SizedBox(width: 8.0),
                 Text(
                   user,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                   ),
@@ -40,11 +40,11 @@ class WallPost extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Icon(Icons.access_time, size: 12, color: Colors.grey),
-                  SizedBox(width: 4.0),
+                  const Icon(Icons.access_time, size: 12, color: Colors.grey),
+                  const SizedBox(width: 4.0),
                   Text(
                     formatDate(timestamp.toDate()),
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.grey,
                       fontSize: 12,
                     ),

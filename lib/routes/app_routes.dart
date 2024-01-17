@@ -12,7 +12,7 @@ class AppRoutes {
   static const String artikelDetailScreen = '/artikel_screen/detail';
 
   static Map<String, WidgetBuilder> get routes => {
-        takaranNutrisiSapiPage: ((context) => TakaranNutrisiSapiPage()),
+        takaranNutrisiSapiPage: ((context) => const TakaranNutrisiSapiPage()),
         artikelDetailScreen: (context) {
           // Ganti dengan logika yang sesuai untuk mendapatkan objek Artikel berdasarkan indeks atau identifikasi unik
 
@@ -22,6 +22,6 @@ class AppRoutes {
 
           return ArtikelDetailScreen(artikel: selectedArtikel);
         },
-        artikelScreen: (context) => ArtikelScreen(),
+        artikelScreen: (context) => const ArtikelScreen(),
       };
 }

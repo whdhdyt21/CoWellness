@@ -4,7 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:login_api/pages/takaran_nutrisi_hasil_page/takaran_nutrisi_hasil_page.dart';
 
 class TakaranNutrisiPakanScreen extends StatefulWidget {
-  TakaranNutrisiPakanScreen({Key? key})
+  const TakaranNutrisiPakanScreen({Key? key})
       : super(
           key: key,
         );
@@ -104,7 +104,7 @@ class _TakaranNutrisiPakanScreenState extends State<TakaranNutrisiPakanScreen> {
                             padding: const EdgeInsets.all(8.0),
                             child: SvgPicture.asset('assets/rumput.svg'),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
                           const Column(
@@ -178,7 +178,7 @@ class _TakaranNutrisiPakanScreenState extends State<TakaranNutrisiPakanScreen> {
                             padding: const EdgeInsets.all(8.0),
                             child: SvgPicture.asset('assets/rumput.svg'),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
                           const Column(
@@ -251,7 +251,7 @@ class _TakaranNutrisiPakanScreenState extends State<TakaranNutrisiPakanScreen> {
                             padding: const EdgeInsets.all(8.0),
                             child: SvgPicture.asset('assets/rumput.svg'),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
                           const Column(
@@ -324,7 +324,7 @@ class _TakaranNutrisiPakanScreenState extends State<TakaranNutrisiPakanScreen> {
                             padding: const EdgeInsets.all(8.0),
                             child: SvgPicture.asset('assets/rumput.svg'),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
                           const Column(
@@ -386,7 +386,7 @@ class _TakaranNutrisiPakanScreenState extends State<TakaranNutrisiPakanScreen> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => TakaranNutrisiHasilPage()));
+                            builder: (context) => const TakaranNutrisiHasilPage()));
                   },
                   style: ElevatedButton.styleFrom(
                     minimumSize: const Size(376.0, 40.0),

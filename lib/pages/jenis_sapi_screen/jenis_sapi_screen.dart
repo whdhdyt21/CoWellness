@@ -2,9 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 // import 'package:login_api/widgets/custom_bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:login_api/core/navigator_service.dart';
 import 'package:login_api/pages/jumlah_sapi/jumlah_sapi.dart';
-import 'package:login_api/routes/app_routes.dart';
 
 class JenisSapiScreen extends StatefulWidget {
   JenisSapiScreen({Key? key}) : super(key: key);
@@ -108,7 +106,7 @@ class _JenisSapiScreenState extends State<JenisSapiScreen> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => TakaranNutrisiSapiPage()));
+                            builder: (context) => const TakaranNutrisiSapiPage()));
                   },
                   child: Container(
                     height: 80,
@@ -126,7 +124,7 @@ class _JenisSapiScreenState extends State<JenisSapiScreen> {
                             right: 10,
                           ),
                           child: Transform.translate(
-                            offset: Offset(20, 0), // Geser 10 piksel ke kanan
+                            offset: const Offset(20, 0), // Geser 10 piksel ke kanan
                             child: SvgPicture.asset(
                               'assets/jenis_sapi.svg',
                               height: 60,
@@ -134,9 +132,9 @@ class _JenisSapiScreenState extends State<JenisSapiScreen> {
                             ),
                           ),
                         ),
-                        Container(
+                        const SizedBox(
                           width: 156,
-                          child: const Center(
+                          child: Center(
                             child: Text(
                               "SAPI 1",
                               style: TextStyle(
@@ -158,7 +156,7 @@ class _JenisSapiScreenState extends State<JenisSapiScreen> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => TakaranNutrisiSapiPage()));
+                            builder: (context) => const TakaranNutrisiSapiPage()));
                   },
                   child: Container(
                     height: 80,
@@ -176,7 +174,7 @@ class _JenisSapiScreenState extends State<JenisSapiScreen> {
                             right: 10,
                           ),
                           child: Transform.translate(
-                            offset: Offset(20, 0), // Geser 10 piksel ke kanan
+                            offset: const Offset(20, 0), // Geser 10 piksel ke kanan
                             child: SvgPicture.asset(
                               'assets/jenis_sapi.svg',
                               height: 60,
@@ -184,9 +182,9 @@ class _JenisSapiScreenState extends State<JenisSapiScreen> {
                             ),
                           ),
                         ),
-                        Container(
+                        const SizedBox(
                           width: 156, // Adjusted width to accommodate the image
-                          child: const Center(
+                          child: Center(
                             child: Text(
                               "SAPI 2",
                               style: TextStyle(

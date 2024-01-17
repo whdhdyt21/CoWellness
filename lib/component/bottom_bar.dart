@@ -19,7 +19,7 @@ class _BottomBarState extends State<BottomBar> {
 
     return Scaffold(
       body: _getPage(_currentIndex),
-      bottomNavigationBar: Container(
+      bottomNavigationBar: SizedBox(
         height: 70, // Set the desired height
         child: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
@@ -68,11 +68,11 @@ class _BottomBarState extends State<BottomBar> {
       case 1:
         return Container();
       case 2:
-        return ArtikelScreen();
+        return const ArtikelScreen();
       case 3:
         return Container();
       case 4:
-        return ForumDiscusion();
+        return const ForumDiscusion();
       default:
         return Container(); // Handle other cases if necessary
     }

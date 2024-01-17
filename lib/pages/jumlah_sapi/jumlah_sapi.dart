@@ -1,7 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:login_api/component/custom_image_view.dart';
-import 'package:login_api/core/image_constant.dart';
 import 'package:flutter/material.dart';
 import 'package:login_api/pages/takaran_nutrisi_pakan_screen/takaran_nutrisi_pakan_screen.dart';
 
@@ -176,7 +174,7 @@ class _TakaranNutrisiSapiPageState extends State<TakaranNutrisiSapiPage> {
                           context,
                           MaterialPageRoute(
                               builder: (context) =>
-                                  TakaranNutrisiPakanScreen()));
+                                  const TakaranNutrisiPakanScreen()));
                     }
                   },
                   style: ElevatedButton.styleFrom(

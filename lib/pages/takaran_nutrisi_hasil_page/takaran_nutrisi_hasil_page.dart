@@ -45,25 +45,25 @@ class _TakaranNutrisiHasilPageState extends State<TakaranNutrisiHasilPage> {
         ),
         body: Container(
           width: double.maxFinite,
-          padding: EdgeInsets.symmetric(
+          padding: const EdgeInsets.symmetric(
             horizontal: 26,
             vertical: 35,
           ),
           child: SingleChildScrollView(
-            physics: BouncingScrollPhysics(),
+            physics: const BouncingScrollPhysics(),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 _buildThirty(context),
-                SizedBox(height: 24),
-                Text("Nutrisi", style: TextStyle(fontWeight: FontWeight.w700)),
-                SizedBox(height: 4),
-                Divider(
+                const SizedBox(height: 24),
+                const Text("Nutrisi", style: TextStyle(fontWeight: FontWeight.w700)),
+                const SizedBox(height: 4),
+                const Divider(
                   color: Colors.black,
                 ),
-                SizedBox(height: 2),
+                const SizedBox(height: 2),
                 Padding(
-                  padding: EdgeInsets.only(right: 10),
+                  padding: const EdgeInsets.only(right: 10),
                   child: _buildSeventeen(
                     context,
                     userImage: "ME",
@@ -71,11 +71,11 @@ class _TakaranNutrisiHasilPageState extends State<TakaranNutrisiHasilPage> {
                     unit: "Kcal/kg",
                   ),
                 ),
-                SizedBox(height: 2),
-                Divider(),
-                SizedBox(height: 2),
+                const SizedBox(height: 2),
+                const Divider(),
+                const SizedBox(height: 2),
                 Padding(
-                  padding: EdgeInsets.only(right: 10),
+                  padding: const EdgeInsets.only(right: 10),
                   child: _buildSeventeen(
                     context,
                     userImage: "ME",
@@ -83,11 +83,11 @@ class _TakaranNutrisiHasilPageState extends State<TakaranNutrisiHasilPage> {
                     unit: "Kcal/kg",
                   ),
                 ),
-                SizedBox(height: 2),
-                Divider(),
-                SizedBox(height: 2),
+                const SizedBox(height: 2),
+                const Divider(),
+                const SizedBox(height: 2),
                 Padding(
-                  padding: EdgeInsets.only(right: 10),
+                  padding: const EdgeInsets.only(right: 10),
                   child: _buildSeventeen(
                     context,
                     userImage: "ME",
@@ -95,11 +95,11 @@ class _TakaranNutrisiHasilPageState extends State<TakaranNutrisiHasilPage> {
                     unit: "Kcal/kg",
                   ),
                 ),
-                SizedBox(height: 2),
-                Divider(),
-                SizedBox(height: 2),
+                const SizedBox(height: 2),
+                const Divider(),
+                const SizedBox(height: 2),
                 Padding(
-                  padding: EdgeInsets.only(right: 10),
+                  padding: const EdgeInsets.only(right: 10),
                   child: _buildSeventeen(
                     context,
                     userImage: "ME",
@@ -107,11 +107,11 @@ class _TakaranNutrisiHasilPageState extends State<TakaranNutrisiHasilPage> {
                     unit: "Kcal/kg",
                   ),
                 ),
-                SizedBox(height: 2),
-                Divider(),
-                SizedBox(height: 2),
+                const SizedBox(height: 2),
+                const Divider(),
+                const SizedBox(height: 2),
                 Padding(
-                  padding: EdgeInsets.only(right: 10),
+                  padding: const EdgeInsets.only(right: 10),
                   child: _buildSeventeen(
                     context,
                     userImage: "ME",
@@ -119,11 +119,11 @@ class _TakaranNutrisiHasilPageState extends State<TakaranNutrisiHasilPage> {
                     unit: "Kcal/kg",
                   ),
                 ),
-                SizedBox(height: 2),
-                Divider(),
-                SizedBox(height: 2),
+                const SizedBox(height: 2),
+                const Divider(),
+                const SizedBox(height: 2),
                 Padding(
-                  padding: EdgeInsets.only(right: 10),
+                  padding: const EdgeInsets.only(right: 10),
                   child: _buildSeventeen(
                     context,
                     userImage: "ME",
@@ -131,11 +131,11 @@ class _TakaranNutrisiHasilPageState extends State<TakaranNutrisiHasilPage> {
                     unit: "Kcal/kg",
                   ),
                 ),
-                SizedBox(height: 2),
-                Divider(),
-                SizedBox(height: 2),
+                const SizedBox(height: 2),
+                const Divider(),
+                const SizedBox(height: 2),
                 Padding(
-                  padding: EdgeInsets.only(right: 10),
+                  padding: const EdgeInsets.only(right: 10),
                   child: _buildSeventeen(
                     context,
                     userImage: "ME",
@@ -143,11 +143,11 @@ class _TakaranNutrisiHasilPageState extends State<TakaranNutrisiHasilPage> {
                     unit: "Kcal/kg",
                   ),
                 ),
-                SizedBox(height: 2),
-                Divider(),
-                SizedBox(height: 2),
+                const SizedBox(height: 2),
+                const Divider(),
+                const SizedBox(height: 2),
                 Padding(
-                  padding: EdgeInsets.only(right: 10),
+                  padding: const EdgeInsets.only(right: 10),
                   child: _buildSeventeen(
                     context,
                     userImage: "ME",
@@ -155,11 +155,11 @@ class _TakaranNutrisiHasilPageState extends State<TakaranNutrisiHasilPage> {
                     unit: "Kcal/kg",
                   ),
                 ),
-                SizedBox(height: 2),
-                Divider(),
-                SizedBox(height: 2),
+                const SizedBox(height: 2),
+                const Divider(),
+                const SizedBox(height: 2),
                 Padding(
-                  padding: EdgeInsets.only(right: 10),
+                  padding: const EdgeInsets.only(right: 10),
                   child: _buildSeventeen(
                     context,
                     userImage: "ME",
@@ -167,11 +167,11 @@ class _TakaranNutrisiHasilPageState extends State<TakaranNutrisiHasilPage> {
                     unit: "Kcal/kg",
                   ),
                 ),
-                SizedBox(height: 2),
-                Divider(),
-                SizedBox(height: 2),
+                const SizedBox(height: 2),
+                const Divider(),
+                const SizedBox(height: 2),
                 Padding(
-                  padding: EdgeInsets.only(right: 10),
+                  padding: const EdgeInsets.only(right: 10),
                   child: _buildSeventeen(
                     context,
                     userImage: "ME",
@@ -179,11 +179,11 @@ class _TakaranNutrisiHasilPageState extends State<TakaranNutrisiHasilPage> {
                     unit: "Kcal/kg",
                   ),
                 ),
-                SizedBox(height: 2),
-                Divider(),
-                SizedBox(height: 2),
+                const SizedBox(height: 2),
+                const Divider(),
+                const SizedBox(height: 2),
                 Padding(
-                  padding: EdgeInsets.only(right: 10),
+                  padding: const EdgeInsets.only(right: 10),
                   child: _buildSeventeen(
                     context,
                     userImage: "ME",
@@ -191,9 +191,9 @@ class _TakaranNutrisiHasilPageState extends State<TakaranNutrisiHasilPage> {
                     unit: "Kcal/kg",
                   ),
                 ),
-                SizedBox(height: 2),
-                Divider(),
-                SizedBox(height: 35),
+                const SizedBox(height: 2),
+                const Divider(),
+                const SizedBox(height: 35),
                 _buildNote(context),
               ],
             ),
@@ -207,12 +207,12 @@ class _TakaranNutrisiHasilPageState extends State<TakaranNutrisiHasilPage> {
 /// Section Widget
 Widget _buildThirty(BuildContext context) {
   return Container(
-    padding: EdgeInsets.symmetric(
+    padding: const EdgeInsets.symmetric(
       horizontal: 10,
       vertical: 14,
     ),
     decoration: BoxDecoration(
-      color: Color(0xFF114373), // Ubah warna sesuai dengan kebutuhan Anda
+      color: const Color(0xFF114373), // Ubah warna sesuai dengan kebutuhan Anda
       borderRadius: BorderRadius.circular(
           10), // Sesuaikan nilai sesuai dengan keinginan Anda
     ),
@@ -225,7 +225,7 @@ Widget _buildThirty(BuildContext context) {
           width: 42,
           // margin: EdgeInsets.symmetric(vertical: 10),
         ),
-        Padding(
+        const Padding(
           padding: EdgeInsets.only(
             left: 9,
             bottom: 3,
@@ -272,12 +272,12 @@ Widget _buildThirty(BuildContext context) {
 Widget _buildNote(BuildContext context) {
   return Container(
     height: 180,
-    padding: EdgeInsets.symmetric(
+    padding: const EdgeInsets.symmetric(
       horizontal: 10,
       vertical: 9,
     ),
     decoration: BoxDecoration(
-      color: Color.fromARGB(
+      color: const Color.fromARGB(
           255, 48, 129, 208), // Ubah warna sesuai dengan kebutuhan Anda
       borderRadius: BorderRadius.circular(
           10), // Sesuaikan nilai sesuai dengan keinginan Anda
@@ -285,7 +285,7 @@ Widget _buildNote(BuildContext context) {
     child: Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Padding(
+        const Padding(
           padding: EdgeInsets.only(bottom: 117),
           child: Text("CATATAN :",
               style:
@@ -294,11 +294,11 @@ Widget _buildNote(BuildContext context) {
         Expanded(
           child: Container(
             width: 289,
-            margin: EdgeInsets.only(
+            margin: const EdgeInsets.only(
               left: 5,
               bottom: 67,
             ),
-            child: Text(
+            child: const Text(
               '''Sapi anda sehat, terus semangat agar bisa dibunuh dan mendapat cuan, setelah itu anda dapat rebahan rebahan dan rebahan.
 
 Bersemangatlah, selalu senyum dan k sabar
@@ -326,7 +326,7 @@ Widget _buildSeventeen(
     children: [
       Text(
         userImage,
-        style: TextStyle(fontWeight: FontWeight.w700),
+        style: const TextStyle(fontWeight: FontWeight.w700),
         // style: theme.textTheme.labelLarge!.copyWith(
         //   color: Colors.black,
         // ),
@@ -336,16 +336,16 @@ Widget _buildSeventeen(
         children: [
           Text(
             value,
-            style: TextStyle(fontWeight: FontWeight.w700),
+            style: const TextStyle(fontWeight: FontWeight.w700),
             // style: theme.textTheme.labelLarge!.copyWith(
             //   color: Colors.black,
             // ),
           ),
           Padding(
-            padding: EdgeInsets.only(left: 80),
+            padding: const EdgeInsets.only(left: 80),
             child: Text(
               unit,
-              style: TextStyle(fontWeight: FontWeight.w700),
+              style: const TextStyle(fontWeight: FontWeight.w700),
               // style: theme.textTheme.labelLarge!.copyWith(
               //   color: Colors.black,
               // ),
