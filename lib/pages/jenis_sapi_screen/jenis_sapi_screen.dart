@@ -1,9 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 // import 'package:login_api/widgets/custom_bottom_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:login_api/component/custom_image_view.dart';
-import 'package:login_api/core/image_constant.dart';
 import 'package:login_api/core/navigator_service.dart';
 import 'package:login_api/pages/takaran_nutrisi_sapi_page/takaran_nutrisi_sapi_page.dart';
 import 'package:login_api/routes/app_routes.dart';
@@ -126,6 +123,7 @@ class _JenisSapiScreenState extends State<JenisSapiScreen> {
                           padding: const EdgeInsets.only(
                             right: 10,
                           ),
+                          child: Image.asset('assets/images/login_logo.png'),
                           // child: CustomImageView(
                           //   imagePath: ImageConstant.imgSapi,
                           //   height: 60,
@@ -170,8 +168,9 @@ class _JenisSapiScreenState extends State<JenisSapiScreen> {
                     child: Row(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(
-                              right: 10), // Adjust the spacing as needed
+                          padding: const EdgeInsets.only(right: 10),
+                          child: Image.asset(
+                              'assets/images/login_logo.png'), // Adjust the spacing as needed
                           // child: CustomImageView(
                           //   imagePath: ImageConstant.imgSapi,
                           //   height: 60,
