@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:login_api/component/my_textfield.dart';
+import 'package:login_api/component/text_field_forum.dart';
 import 'package:login_api/component/wall_post.dart';
 
 class ForumDiscusion extends StatefulWidget {
@@ -96,7 +96,7 @@ class _ForumDiscusionState extends State<ForumDiscusion> {
                   child: Row(
                     children: [
                       Expanded(
-                        child: MyTextField(
+                        child: TextForumField(
                           controller: textController,
                           hintext: 'Write something on the forum..',
                           obsecureText: false,

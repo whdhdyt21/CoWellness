@@ -1,21 +1,23 @@
 import 'package:flutter/material.dart';
 
-class MyTextField extends StatelessWidget {
+class TextForumField extends StatelessWidget {
   final controller;
   final String hintext;
   final bool obsecureText;
-  
 
-  const MyTextField(
-      {super.key,
-      required this.controller,
-      required this.hintext,
-      required this.obsecureText});
+  const TextForumField({
+    Key? key,
+    required this.controller,
+    required this.hintext,
+    required this.obsecureText,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 25.0),
+    return Container(
+      width:
+          double.infinity, // Menyesuaikan lebar container dengan lebar parent
+      margin: const EdgeInsets.symmetric(horizontal: 25.0),
       child: TextField(
         controller: controller,
         obscureText: obsecureText,
@@ -36,7 +38,6 @@ class MyTextField extends StatelessWidget {
           hintStyle: TextStyle(
             color: Colors.grey.shade500,
           ),
-        
         ),
       ),
     );
