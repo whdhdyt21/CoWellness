@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 
-class MyTextField extends StatelessWidget {
+class PasswordField extends StatelessWidget {
   final controller;
   final String hintext;
   final bool obsecureText;
+  final Widget? suffix;
   
 
-  const MyTextField(
+  const PasswordField(
       {super.key,
       required this.controller,
       required this.hintext,
-      required this.obsecureText});
+      required this.obsecureText,
+      required this.suffix});
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +38,7 @@ class MyTextField extends StatelessWidget {
           hintStyle: TextStyle(
             color: Colors.grey.shade500,
           ),
-        
+        suffixIcon: suffix,
         ),
       ),
     );

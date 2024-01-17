@@ -1,7 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:login_api/component/my_button.dart';
 import 'package:login_api/component/my_textfield.dart';
+import 'package:login_api/component/password_field.dart';
 import 'package:login_api/component/square_title.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -20,6 +22,8 @@ class _RegisterPageState extends State<RegisterPage> {
 
   final confirmPasswordController = TextEditingController();
 
+  bool passwordObsecured = true;
+  bool passwordObsecured2 = true;
   // sign user in
   void signUserUp() async {
     // loading sircle
@@ -36,13 +40,14 @@ class _RegisterPageState extends State<RegisterPage> {
           email: emailController.text,
           password: passwordController.text,
         );
+        Navigator.pop(context);
       } else {
+        Navigator.pop(context);
         showErrorMessage("Password doesn't match");
       }
-      Navigator.pop(context);
     } on FirebaseAuthException catch (e) {
-      Navigator.pop(context);
       showErrorMessage(e.code);
+      Navigator.pop(context);
     }
   }
 
@@ -68,7 +73,7 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[300],
+      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       body: SafeArea(
         child: Center(
           child: SingleChildScrollView(
@@ -80,19 +85,20 @@ class _RegisterPageState extends State<RegisterPage> {
                   height: 15,
                 ),
                 //logo
-                const Icon(
-                  Icons.lock,
-                  size: 50,
+                SvgPicture.asset(
+                  'assets/img_logo.svg',
+                  height: 100,
                 ),
                 const SizedBox(
                   height: 25,
                 ),
 
                 //welcome back, you've been missed
-                const Text('Lets Get Started!',
+                const Text('SELAMAT DATANG',
                     style: TextStyle(
-                      fontSize: 16,
-                    )),
+                        fontSize: 32,
+                        fontWeight: FontWeight.w700,
+                        color: Colors.black)),
 
                 const SizedBox(height: 50),
                 //username textfield
@@ -104,19 +110,39 @@ class _RegisterPageState extends State<RegisterPage> {
 
                 const SizedBox(height: 10),
                 //password textfield
-                MyTextField(
+                PasswordField(
                   controller: passwordController,
                   hintext: 'Password',
-                  obsecureText: true,
+                  obsecureText: passwordObsecured,
+                  suffix: IconButton(
+                    onPressed: () {
+                      setState(() {
+                        passwordObsecured = !passwordObsecured;
+                      });
+                    },
+                    icon: Icon(passwordObsecured
+                        ? Icons.visibility_off
+                        : Icons.visibility),
+                  ),
                 ),
 
                 const SizedBox(height: 10),
 
                 //confirm password textfield
-                MyTextField(
+                PasswordField(
                   controller: confirmPasswordController,
                   hintext: 'Confirm Password',
-                  obsecureText: true,
+                  obsecureText: passwordObsecured2,
+                  suffix: IconButton(
+                    onPressed: () {
+                      setState(() {
+                        passwordObsecured2 = !passwordObsecured2;
+                      });
+                    },
+                    icon: Icon(passwordObsecured2
+                        ? Icons.visibility_off
+                        : Icons.visibility),
+                  ),
                 ),
 
                 const SizedBox(height: 10),

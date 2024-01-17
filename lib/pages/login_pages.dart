@@ -1,7 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:login_api/component/my_button.dart';
 import 'package:login_api/component/my_textfield.dart';
+import 'package:login_api/component/password_field.dart';
 import 'package:login_api/component/square_title.dart';
 
 class LoginPage extends StatefulWidget {
@@ -17,6 +19,8 @@ class _LoginPageState extends State<LoginPage> {
   final emailController = TextEditingController();
 
   final passwordController = TextEditingController();
+
+  bool passwordObsecured = true;
 
   // sign user in
   void signUserIn() async {
@@ -62,7 +66,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[300],
+      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       body: SafeArea(
         child: Center(
           child: SingleChildScrollView(
@@ -74,19 +78,20 @@ class _LoginPageState extends State<LoginPage> {
                   height: 50,
                 ),
                 //logo
-                const Icon(
-                  Icons.lock,
-                  size: 100,
+                SvgPicture.asset(
+                  'assets/img_logo.svg',
+                  height: 100,
                 ),
                 const SizedBox(
-                  height: 50,
+                  height: 30,
                 ),
 
                 //welcome back, you've been missed
-                const Text('Welcome Back, You\'ve been missed',
+                const Text('SELAMAT DATANG',
                     style: TextStyle(
-                      fontSize: 16,
-                    )),
+                        fontSize: 32,
+                        fontWeight: FontWeight.w700,
+                        color: Colors.black)),
 
                 const SizedBox(height: 50),
                 //username textfield
@@ -98,10 +103,20 @@ class _LoginPageState extends State<LoginPage> {
 
                 const SizedBox(height: 10),
                 //password textfield
-                MyTextField(
+                PasswordField(
                   controller: passwordController,
                   hintext: 'Password',
-                  obsecureText: true,
+                  obsecureText: passwordObsecured,
+                  suffix: IconButton(
+                    onPressed: () {
+                      setState(() {
+                        passwordObsecured = !passwordObsecured;
+                      });
+                    },
+                    icon: Icon(passwordObsecured
+                        ? Icons.visibility_off
+                        : Icons.visibility),
+                  ),
                 ),
 
                 const SizedBox(height: 10),
