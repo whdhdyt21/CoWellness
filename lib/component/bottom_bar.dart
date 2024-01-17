@@ -60,12 +60,13 @@ class _BottomBarState extends State<BottomBar> {
     );
   }
 
+
   Widget _getPage(int index) {
     switch (index) {
       case 0:
-        return Container();
-      case 1:
         return JenisSapiScreen();
+      case 1:
+        return Container();
       case 2:
         return ArtikelScreen();
       case 3:

@@ -78,6 +78,7 @@ class _ForumDiscusionState extends State<ForumDiscusion> {
                             return WallPost(
                               message: post['Message'],
                               user: post['UserEmail'],
+                              timestamp: post['TimeStamp'],
                             );
                           });
                     } else if (snapshot.hasError) {

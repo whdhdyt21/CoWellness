@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:login_api/pages/artikel_screen/artikel.dart';
 import 'package:login_api/pages/artikel_screen/detail/detail_artikel.dart';
 import 'package:login_api/pages/artikel_screen/models/artikel_list.dart';
-import 'package:login_api/pages/takaran_nutrisi_sapi_page/takaran_nutrisi_sapi_page.dart';
+import 'package:login_api/pages/jumlah_sapi/jumlah_sapi.dart';
 
 class AppRoutes {
   static const String artikelScreen = '/artikel_screen';

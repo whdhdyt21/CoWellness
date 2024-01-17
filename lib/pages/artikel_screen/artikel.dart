@@ -23,7 +23,7 @@ class _ArtikelScreenState extends State<ArtikelScreen> {
       child: Scaffold(
         appBar: AppBar(
           title: const Center(
-            child: Text('FORUM', style: TextStyle(color: Colors.white)),
+            child: Text('ARTIKEL', style: TextStyle(color: Colors.white)),
           ),
           backgroundColor: const Color.fromARGB(255, 17, 67, 115),
           leading: IconButton(
