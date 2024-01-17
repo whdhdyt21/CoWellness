@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:login_api/component/my_textfield.dart';
 import 'package:login_api/component/wall_post.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class ForumDiscusion extends StatefulWidget {
+  const ForumDiscusion({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<ForumDiscusion> createState() => _ForumDiscusionState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _ForumDiscusionState extends State<ForumDiscusion> {
   final currentUser = FirebaseAuth.instance.currentUser!;
 
   final textController = TextEditingController();
@@ -38,9 +38,16 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
         appBar: AppBar(
           title: Center(
-            child: Text('The Wall', style: TextStyle(color: Colors.white)),
+            child: Text('FORUM', style: TextStyle(color: Colors.white)),
           ),
-          backgroundColor: const Color.fromARGB(255, 0, 0, 0),
+          backgroundColor: Color.fromARGB(255, 17, 67, 115),
+          leading: IconButton(
+            onPressed: () {
+              // Tambahkan aksi yang sesuai ketika ikon profil diklik
+            },
+            icon: const Icon(Icons.account_circle),
+            color: Colors.white,
+          ),
           actions: [
             IconButton(
               onPressed: signUserOut,
@@ -89,7 +96,7 @@ class _HomePageState extends State<HomePage> {
                     Expanded(
                       child: MyTextField(
                         controller: textController,
-                        hintext: 'Write something on the wall..',
+                        hintext: 'Write something on the forum..',
                         obsecureText: false,
                       ),
                     ),

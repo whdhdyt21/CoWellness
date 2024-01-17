@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:login_api/pages/home_page.dart';
+import 'package:login_api/pages/forum_discusion.dart';
 
 class BottomBar extends StatefulWidget {
   const BottomBar({Key? key}) : super(key: key);
@@ -17,36 +17,43 @@ class _BottomBarState extends State<BottomBar> {
 
     return Scaffold(
       body: _getPage(_currentIndex),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        currentIndex: _currentIndex,
-        backgroundColor: bluePrimary,
-        selectedItemColor: white,
-        unselectedItemColor: white.withOpacity(.40),
-        selectedLabelStyle: textTheme.bodySmall,
-        unselectedLabelStyle: textTheme.bodySmall,
-        onTap: (value) {
-          // Respond to item press.
-          setState(() => _currentIndex = value);
-        },
-        items: const [
-          BottomNavigationBarItem(
-            label: 'NUTRISI',
-            icon: Icon(Icons.abc),
-          ),
-          BottomNavigationBarItem(
-            label: 'JELAJAH',
-            icon: Icon(Icons.map_outlined),
-          ),
-          BottomNavigationBarItem(
-            label: 'PINDAI',
-            icon: Icon(Icons.qr_code),
-          ),
-          BottomNavigationBarItem(
-            label: 'KUIS',
-            icon: Icon(Icons.quiz_outlined),
-          ),
-        ],
+      bottomNavigationBar: Container(
+        height: 70, // Set the desired height
+        child: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          currentIndex: _currentIndex,
+          backgroundColor: bluePrimary,
+          selectedItemColor: white,
+          unselectedItemColor: white.withOpacity(.40),
+          selectedLabelStyle: textTheme.bodySmall,
+          unselectedLabelStyle: textTheme.bodySmall,
+          onTap: (value) {
+            // Respond to item press.
+            setState(() => _currentIndex = value);
+          },
+          items: const [
+            BottomNavigationBarItem(
+              label: 'NUTRISI',
+              icon: Icon(Icons.pets),
+            ),
+            BottomNavigationBarItem(
+              label: 'PENGINGAT',
+              icon: Icon(Icons.alarm),
+            ),
+            BottomNavigationBarItem(
+              label: 'ARTIKEL',
+              icon: Icon(Icons.article_outlined),
+            ),
+            BottomNavigationBarItem(
+              label: 'DROP',
+              icon: Icon(Icons.pin_drop),
+            ),
+            BottomNavigationBarItem(
+              label: 'FORUM',
+              icon: Icon(Icons.forum),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -54,13 +61,15 @@ class _BottomBarState extends State<BottomBar> {
   Widget _getPage(int index) {
     switch (index) {
       case 0:
-        return HomePage();
+        return Container();
       case 1:
-        return HomePage();
+        return Container();
       case 2:
         return Container();
       case 3:
         return Container();
+      case 4:
+        return ForumDiscusion();
       default:
         return Container(); // Handle other cases if necessary
     }
