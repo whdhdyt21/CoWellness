@@ -101,7 +101,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         fontWeight: FontWeight.w700,
                         color: Colors.black)),
 
-                const SizedBox(height: 50),
+                const SizedBox(height: 40),
                 //username textfield
                 MyTextField(
                   controller: emailController,
@@ -184,7 +184,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     ],
                   ),
                 ),
-                const SizedBox(height: 30),
+                const SizedBox(height: 20),
                 //google
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
