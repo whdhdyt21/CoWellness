@@ -31,7 +31,7 @@ CoWellness adalah aplikasi berbasis mobile platform untuk mengakomodasi para pet
 
 * **Login & Register**
 
-Login dan Register sudah terconnect pada firebase dan bisa juga login menggunakan google.
+Login dan Register sudah terconnect pada firebase dan bisa juga login menggunakan google login.
 <br>
 ![Login](screenshots/login.png)
 ![Register](screenshots/register.png)
