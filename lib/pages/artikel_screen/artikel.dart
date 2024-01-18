@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:login_api/pages/artikel_screen/detail/detail_artikel.dart';
-import 'package:login_api/pages/artikel_screen/models/artikel_list.dart';
+import 'package:CoWellness/pages/artikel_screen/detail/detail_artikel.dart';
+import 'package:CoWellness/pages/artikel_screen/models/artikel_list.dart';
 
 class ArtikelScreen extends StatefulWidget {
   const ArtikelScreen({Key? key}) : super(key: key);

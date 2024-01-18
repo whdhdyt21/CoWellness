@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/material.dart';
-import 'package:login_api/pages/takaran_nutrisi_pakan_screen/takaran_nutrisi_pakan_screen.dart';
+import 'package:CoWellness/pages/takaran_nutrisi_pakan_screen/takaran_nutrisi_pakan_screen.dart';
 
 // ignore_for_file: must_be_immutable
 class TakaranNutrisiSapiPage extends StatefulWidget {

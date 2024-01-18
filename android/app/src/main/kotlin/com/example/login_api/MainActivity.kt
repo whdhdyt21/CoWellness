@@ -1,4 +1,4 @@
-package com.example.login_api
+package com.example.CoWellness
 
 import io.flutter.embedding.android.FlutterActivity
 

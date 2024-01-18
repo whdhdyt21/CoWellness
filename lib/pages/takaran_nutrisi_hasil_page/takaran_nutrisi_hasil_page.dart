@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:login_api/component/bottom_bar.dart';
-import 'package:login_api/pages/jenis_sapi_screen/jenis_sapi_screen.dart';
+import 'package:CoWellness/component/bottom_bar.dart';
+import 'package:CoWellness/pages/jenis_sapi_screen/jenis_sapi_screen.dart';
 
 void signUserOut() async {
   await FirebaseAuth.instance.signOut();

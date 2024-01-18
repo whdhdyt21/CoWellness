@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:login_api/component/text_field_forum.dart';
-import 'package:login_api/component/wall_post.dart';
+import 'package:CoWellness/component/text_field_forum.dart';
+import 'package:CoWellness/component/wall_post.dart';
 
 class ForumDiscusion extends StatefulWidget {
   const ForumDiscusion({super.key});

@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:login_api/component/dislike_button.dart';
-import 'package:login_api/component/like_button.dart';
+import 'package:CoWellness/component/dislike_button.dart';
+import 'package:CoWellness/component/like_button.dart';
 
 class WallPost extends StatefulWidget {
   final String user;
@@ -128,7 +128,8 @@ class _WallPostState extends State<WallPost> {
                     padding: const EdgeInsets.only(top: 10.0),
                     child: Row(
                       children: [
-                        const Icon(Icons.access_time, size: 12, color: Colors.grey),
+                        const Icon(Icons.access_time,
+                            size: 12, color: Colors.grey),
                         const SizedBox(width: 4.0),
                         Text(
                           formatDate(widget.timestamp.toDate()),

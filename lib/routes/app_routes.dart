@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:login_api/pages/artikel_screen/artikel.dart';
-import 'package:login_api/pages/artikel_screen/detail/detail_artikel.dart';
-import 'package:login_api/pages/artikel_screen/models/artikel_list.dart';
-import 'package:login_api/pages/jumlah_sapi/jumlah_sapi.dart';
+import 'package:CoWellness/pages/artikel_screen/artikel.dart';
+import 'package:CoWellness/pages/artikel_screen/detail/detail_artikel.dart';
+import 'package:CoWellness/pages/artikel_screen/models/artikel_list.dart';
+import 'package:CoWellness/pages/jumlah_sapi/jumlah_sapi.dart';
 
 class AppRoutes {
   static const String artikelScreen = '/artikel_screen';
