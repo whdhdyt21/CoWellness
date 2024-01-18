@@ -45,7 +45,6 @@ class _TakaranNutrisiPakanScreenState extends State<TakaranNutrisiPakanScreen> {
       return false;
     }
   }
-  
 
   @override
   Widget build(BuildContext context) {
@@ -109,7 +108,7 @@ class _TakaranNutrisiPakanScreenState extends State<TakaranNutrisiPakanScreen> {
               buildPakanMiniCard(
                 title: "Konsentrat Pakan Ternak",
                 imageUrl:
-                    "https://dinpertanpangan.demakkab.go.id/wp-content/uploads/2021/06/SAPI-POTONG-SEHAT-BUTUH-KONSENTRAT.jpg",
+                    "https://2.bp.blogspot.com/-6U3IRey5R4E/VtVqen1EJPI/AAAAAAAAAnQ/kYhhLR4IhSw/s1600/teknologi%2Bpengolahan%2Bpakan%2Bkonsentrat.jpg",
                 checkboxValue: _isChecked3,
                 onChanged: (bool? value) {
                   setState(() {

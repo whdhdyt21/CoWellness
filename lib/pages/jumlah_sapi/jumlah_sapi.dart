@@ -23,12 +23,15 @@ class _TakaranNutrisiSapiPageState extends State<TakaranNutrisiSapiPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Center(
-          child: Text(
-            'TAKARAN NUTRISI',
-            style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-              fontFamily: 'Montserrat',
+          child: SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            child: Text(
+              'TAKARAN NUTRISI',
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                fontFamily: 'Montserrat',
+              ),
             ),
           ),
         ),
