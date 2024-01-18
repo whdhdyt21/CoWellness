@@ -34,7 +34,7 @@ CoWellness adalah aplikasi berbasis mobile platform untuk mengakomodasi para pet
 ![Login](screenshots/login.png)
 ![Register](screenshots/register.png)
 ![Register with google](screenshots/regis_wtih_google.png)
-
+<br>
 * **Takaran nutrisi pangan sapi**
 
 ![Jenis sapi](screenshots/jenis_sapi.png)
