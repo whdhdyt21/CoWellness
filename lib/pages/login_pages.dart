@@ -76,7 +76,7 @@ class _LoginPageState extends State<LoginPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const SizedBox(
-                  height: 50,
+                  height: 30,
                 ),
                 //logo
                 SvgPicture.asset(
@@ -171,13 +171,14 @@ class _LoginPageState extends State<LoginPage> {
                     ],
                   ),
                 ),
-                const SizedBox(height: 30),
+                const SizedBox(height: 20),
                 //google
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    SquareTile(onTap: () => AuthService().signInWithGoole(),
-                    imagePath: 'assets/icon_google.png'),
+                    SquareTile(
+                        onTap: () => AuthService().signInWithGoole(),
+                        imagePath: 'assets/icon_google.png'),
                   ],
                 ),
 
