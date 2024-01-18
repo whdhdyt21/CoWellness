@@ -1,29 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:login_api/component/bottom_bar.dart';
+import 'package:login_api/pages/jenis_sapi_screen/jenis_sapi_screen.dart';
 
-
-
-
-  void signUserOut() async {
-    await FirebaseAuth.instance.signOut();
-  }
-
+void signUserOut() async {
+  await FirebaseAuth.instance.signOut();
+}
 
 class TakaranNutrisiHasilPage extends StatelessWidget {
   final List<Map<String, String>> data = [
     {
       'title': 'Rumput Hijau:',
-      'imageUrl': 'https://mesinpencacahrumput.com/wp-content/uploads/2019/01/Cara-Menanam-Rumput-Gajah.jpg',
+      'imageUrl':
+          'https://mesinpencacahrumput.com/wp-content/uploads/2019/01/Cara-Menanam-Rumput-Gajah.jpg',
       'subtitle': 'Takaran: 30-35 kg/ekor/hari',
     },
     {
       'title': 'Jerami:',
-      'imageUrl': 'https://www.ransumternak.distan.jogjaprov.go.id/img/artikel/fermentasi%20jerami.jpg',
+      'imageUrl':
+          'https://www.ransumternak.distan.jogjaprov.go.id/img/artikel/fermentasi%20jerami.jpg',
       'subtitle': 'Takaran: 6-8 kg/ekor/hari',
     },
     {
       'title': 'Konsentrat:',
-      'imageUrl': 'https://dinpertanpangan.demakkab.go.id/wp-content/uploads/2021/06/SAPI-POTONG-SEHAT-BUTUH-KONSENTRAT.jpg',
+      'imageUrl':
+          'https://2.bp.blogspot.com/-6U3IRey5R4E/VtVqen1EJPI/AAAAAAAAAnQ/kYhhLR4IhSw/s1600/teknologi%2Bpengolahan%2Bpakan%2Bkonsentrat.jpg',
       'subtitle': 'Takaran: 1–2% dari bobot badan sapi/ekor/hari',
     },
   ];
@@ -43,6 +44,16 @@ class TakaranNutrisiHasilPage extends StatelessWidget {
           ),
         ),
         backgroundColor: const Color.fromARGB(255, 17, 67, 115),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => BottomBar()),
+            );
+          },
+          icon: const Icon(Icons.arrow_back),
+          color: Colors.white,
+        ),
         actions: [
           IconButton(
             onPressed: signUserOut,

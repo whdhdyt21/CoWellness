@@ -45,7 +45,6 @@ class _TakaranNutrisiPakanScreenState extends State<TakaranNutrisiPakanScreen> {
       return false;
     }
   }
-  
 
   @override
   Widget build(BuildContext context) {
@@ -69,6 +68,9 @@ class _TakaranNutrisiPakanScreenState extends State<TakaranNutrisiPakanScreen> {
             color: Colors.white,
           )
         ],
+        iconTheme: const IconThemeData(
+          color: Colors.white,
+        ),
       ),
       body: Container(
         width: double.maxFinite,
@@ -109,7 +111,7 @@ class _TakaranNutrisiPakanScreenState extends State<TakaranNutrisiPakanScreen> {
               buildPakanMiniCard(
                 title: "Konsentrat Pakan Ternak",
                 imageUrl:
-                    "https://dinpertanpangan.demakkab.go.id/wp-content/uploads/2021/06/SAPI-POTONG-SEHAT-BUTUH-KONSENTRAT.jpg",
+                    "https://2.bp.blogspot.com/-6U3IRey5R4E/VtVqen1EJPI/AAAAAAAAAnQ/kYhhLR4IhSw/s1600/teknologi%2Bpengolahan%2Bpakan%2Bkonsentrat.jpg",
                 checkboxValue: _isChecked3,
                 onChanged: (bool? value) {
                   setState(() {
@@ -155,50 +157,58 @@ class _TakaranNutrisiPakanScreenState extends State<TakaranNutrisiPakanScreen> {
     required Function(bool?) onChanged,
   }) {
     return Container(
-      height: 80,
-      width: double.maxFinite,
       margin: const EdgeInsets.symmetric(vertical: 10),
-      decoration: BoxDecoration(
-        color: const Color.fromARGB(255, 17, 67, 115),
-        borderRadius: BorderRadius.circular(10.0),
-      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Container(
-            width: 80,
+            width: 235, // Adjust the width as needed
             height: 80,
             decoration: BoxDecoration(
+              color: const Color.fromARGB(255, 17, 67, 115),
               borderRadius: BorderRadius.circular(10.0),
             ),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(10.0),
-              child: Image.network(
-                imageUrl,
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),
-          const SizedBox(width: 10),
-          Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
+            child: Row(
               children: [
-                Text(
-                  title,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
-                    fontFamily: 'Montserrat',
-                    fontWeight: FontWeight.w500,
+                Container(
+                  width: 80,
+                  height: 80,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(10.0),
+                    child: Image.network(
+                      imageUrl,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 10),
+                Expanded(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        title,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                          fontFamily: 'Montserrat',
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],
             ),
           ),
+          const SizedBox(width: 10),
           Container(
-            width: 50,
+            width: MediaQuery.of(context).size.width *
+                0.15, // Adjust the width as needed
             height: 50,
             decoration: BoxDecoration(
               border: Border.all(
@@ -233,7 +243,7 @@ class _TakaranNutrisiPakanScreenState extends State<TakaranNutrisiPakanScreen> {
       },
       style: ElevatedButton.styleFrom(
         minimumSize: const Size(376.0, 40.0),
-        backgroundColor: const Color.fromARGB(255, 17, 67, 115),
+        backgroundColor: const Color.fromARGB(255, 136, 161, 185),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10.0),
         ),
