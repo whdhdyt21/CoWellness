@@ -26,6 +26,8 @@ class _ForumDiscusionState extends State<ForumDiscusion> {
         "UserEmail": currentUser.email,
         "Message": textController.text,
         "TimeStamp": Timestamp.now(),
+        "Likes": [],
+        "Dislikes": [],
       });
       setState(() {
         textController.clear();
@@ -79,6 +81,13 @@ class _ForumDiscusionState extends State<ForumDiscusion> {
                               message: post['Message'],
                               user: post['UserEmail'],
                               timestamp: post['TimeStamp'],
+                              postId: post.id,
+                              likes: List<String>.from(
+                                post['Likes'] ?? [],
+                              ),
+                              dislikes: List<String>.from(
+                                post['Dislikes'] ?? [],
+                              ),
                             );
                           });
                     } else if (snapshot.hasError) {
