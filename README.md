@@ -35,20 +35,20 @@ Login dan Register sudah terconnect pada firebase dan bisa juga login menggunaka
 ![Login](screenshots/login.png)
 ![Register](screenshots/register.png)
 ![Register with google](screenshots/regis_wtih_google.png)
-<br><br>
+
 * **Takaran nutrisi**
 Fitur takaran nutrisi sapi kami buat agar peternak dapat dengan mudah untuk menakar nutrisi dan vitamin yang diberikan kepada sapi mereka.
 ![Jenis sapi](screenshots/jenis_sapi.png)
 ![Jumlah sapi](screenshots/jumlah_sapi.png)
 ![Jenis pakan](screenshots/jenis_pakan.png)
 ![Hasil takaran](screenshots/hasil_takaran.png)
-<br><br>
+
 * **Artikel**
 
 Fitur artikel yang menjabarkan jenis-jenis penyakit pada sapi, serta ciri-ciri sapi terjangkit penyakit tersebut dan tips-tips kesehatan sapi.
 ![Artikel](screenshots/artikel.png)
 ![Detail Artikel](screenshots/detail_artikel.png)
-<br><br>
+
 * **Forum**
 
 Forum diskusi merupakan tempat para peternak dapat berinteraksi antar satu sama lain, sehingga mereka dapat berbagi informasi yang dapat menambah pengetahuan baru bagi mereka.
