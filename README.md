@@ -6,4 +6,4 @@ Hacker: Wahid Hidayat<br>
 Hustler: Puan Bening Pastika<br>
 Hipster: Muhammad Rizki Irawan Wijaya<br>
 
-![Icon](screenshots/icon_app.png "Icon")
+![Icon](screenshots/login.png "Icon")
