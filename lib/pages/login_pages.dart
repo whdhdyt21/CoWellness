@@ -1,11 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:login_api/component/my_button.dart';
-import 'package:login_api/component/my_textfield.dart';
-import 'package:login_api/component/password_field.dart';
-import 'package:login_api/component/square_title.dart';
-import 'package:login_api/services/auth_services.dart';
+import 'package:CoWellness/component/my_button.dart';
+import 'package:CoWellness/component/my_textfield.dart';
+import 'package:CoWellness/component/password_field.dart';
+import 'package:CoWellness/component/square_title.dart';
+import 'package:CoWellness/services/auth_services.dart';
 
 class LoginPage extends StatefulWidget {
   final Function()? onTap;

@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:login_api/pages/takaran_nutrisi_hasil_page/takaran_nutrisi_hasil_page.dart';
+import 'package:CoWellness/pages/takaran_nutrisi_hasil_page/takaran_nutrisi_hasil_page.dart';
 
 class TakaranNutrisiPakanScreen extends StatefulWidget {
   const TakaranNutrisiPakanScreen({Key? key}) : super(key: key);

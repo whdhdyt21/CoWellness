@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:login_api/pages/artikel_screen/artikel.dart';
-import 'package:login_api/pages/forum_discusion.dart';
-import 'package:login_api/pages/jenis_sapi_screen/jenis_sapi_screen.dart';
+import 'package:CoWellness/pages/artikel_screen/artikel.dart';
+import 'package:CoWellness/pages/forum_discusion.dart';
+import 'package:CoWellness/pages/jenis_sapi_screen/jenis_sapi_screen.dart';
 
 class BottomBar extends StatefulWidget {
   const BottomBar({Key? key}) : super(key: key);
@@ -59,7 +59,6 @@ class _BottomBarState extends State<BottomBar> {
       ),
     );
   }
-
 
   Widget _getPage(int index) {
     switch (index) {

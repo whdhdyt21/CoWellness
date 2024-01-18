@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:login_api/pages/artikel_screen/models/artikel_list.dart';
+import 'package:CoWellness/pages/artikel_screen/models/artikel_list.dart';
 
 class ArtikelDetailScreen extends StatelessWidget {
   const ArtikelDetailScreen({Key? key, required this.artikel})
