@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:login_api/component/bottom_bar.dart';
+import 'package:login_api/pages/jenis_sapi_screen/jenis_sapi_screen.dart';
 
 void signUserOut() async {
   await FirebaseAuth.instance.signOut();
@@ -42,6 +44,16 @@ class TakaranNutrisiHasilPage extends StatelessWidget {
           ),
         ),
         backgroundColor: const Color.fromARGB(255, 17, 67, 115),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => BottomBar()),
+            );
+          },
+          icon: const Icon(Icons.arrow_back),
+          color: Colors.white,
+        ),
         actions: [
           IconButton(
             onPressed: signUserOut,
