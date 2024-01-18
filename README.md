@@ -38,6 +38,7 @@ Login dan Register sudah terconnect pada firebase dan bisa juga login menggunaka
 ![Register with google](screenshots/regis_wtih_google.png)
 
 * **Takaran nutrisi**
+  
 Fitur takaran nutrisi sapi kami buat agar peternak dapat dengan mudah untuk menakar nutrisi dan vitamin yang diberikan kepada sapi mereka.
 <br>
 ![Jenis sapi](screenshots/jenis_sapi.png)
