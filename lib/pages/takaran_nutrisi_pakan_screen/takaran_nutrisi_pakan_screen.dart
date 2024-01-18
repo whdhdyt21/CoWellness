@@ -1,13 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:login_api/pages/takaran_nutrisi_hasil_page/takaran_nutrisi_hasil_page.dart';
 
 class TakaranNutrisiPakanScreen extends StatefulWidget {
-  const TakaranNutrisiPakanScreen({Key? key})
-      : super(
-          key: key,
-        );
+  const TakaranNutrisiPakanScreen({Key? key}) : super(key: key);
 
   @override
   State<TakaranNutrisiPakanScreen> createState() =>
@@ -16,400 +12,239 @@ class TakaranNutrisiPakanScreen extends StatefulWidget {
 
 class _TakaranNutrisiPakanScreenState extends State<TakaranNutrisiPakanScreen> {
   GlobalKey<NavigatorState> navigatorKey = GlobalKey();
-  bool? _isChecked = false;
+  bool? _isChecked1 = false;
   bool? _isChecked2 = false;
   bool? _isChecked3 = false;
-  bool? _isChecked4 = false;
 
   void signUserOut() async {
     await FirebaseAuth.instance.signOut();
   }
 
+//minimal 3 checkbox terpilih, kalo kurang dari 3, maka muncul alert dialog
+  bool _validateCheckboxes() {
+    if (_isChecked1 == true && _isChecked2 == true && _isChecked3 == true) {
+      return true;
+    } else {
+      showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: const Text('Peringatan'),
+            content: const Text('Pilih minimal 3 pakan'),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: const Text('OK'),
+              ),
+            ],
+          );
+        },
+      );
+      return false;
+    }
+  }
+  
+
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(
-          title: const Center(
-            child:
-                Text('TAKARAN NUTRISI', style: TextStyle(color: Colors.white)),
-          ),
-          backgroundColor: const Color.fromARGB(255, 17, 67, 115),
-          leading: IconButton(
-            onPressed: () {
-              // Tambahkan aksi yang sesuai ketika ikon profil diklik
-            },
-            icon: const Icon(Icons.account_circle),
-            color: Colors.white,
-          ),
-          actions: [
-            IconButton(
-              onPressed: signUserOut,
-              icon: const Icon(Icons.logout),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Center(
+          child: Text(
+            'TAKARAN NUTRISI',
+            style: TextStyle(
               color: Colors.white,
-            )
-          ],
-        ),
-        body: Container(
-          width: double.maxFinite,
-          padding: const EdgeInsets.symmetric(
-            horizontal: 26,
-            vertical: 25,
+              fontWeight: FontWeight.bold,
+              fontFamily: 'Montserrat',
+            ),
           ),
-          child: SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
+        ),
+        backgroundColor: const Color.fromARGB(255, 17, 67, 115),
+        actions: [
+          IconButton(
+            onPressed: signUserOut,
+            icon: const Icon(Icons.logout),
+            color: Colors.white,
+          )
+        ],
+      ),
+      body: Container(
+        width: double.maxFinite,
+        padding: const EdgeInsets.symmetric(
+          horizontal: 26,
+          vertical: 25,
+        ),
+        child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
+          child: Column(
+            children: [
+              buildHeaderContainer(),
+              const SizedBox(height: 40),
+              buildPakanMiniCard(
+                title: "Rumput Hijau",
+                imageUrl:
+                    "https://mesinpencacahrumput.com/wp-content/uploads/2019/01/Cara-Menanam-Rumput-Gajah.jpg",
+                checkboxValue: _isChecked1,
+                onChanged: (bool? value) {
+                  setState(() {
+                    _isChecked1 = value!;
+                  });
+                },
+              ),
+              const SizedBox(height: 10),
+              buildPakanMiniCard(
+                title: "Jerami",
+                imageUrl:
+                    "https://www.ransumternak.distan.jogjaprov.go.id/img/artikel/fermentasi%20jerami.jpg",
+                checkboxValue: _isChecked2,
+                onChanged: (bool? value) {
+                  setState(() {
+                    _isChecked2 = value!;
+                  });
+                },
+              ),
+              const SizedBox(height: 10),
+              buildPakanMiniCard(
+                title: "Konsentrat Pakan Ternak",
+                imageUrl:
+                    "https://dinpertanpangan.demakkab.go.id/wp-content/uploads/2021/06/SAPI-POTONG-SEHAT-BUTUH-KONSENTRAT.jpg",
+                checkboxValue: _isChecked3,
+                onChanged: (bool? value) {
+                  setState(() {
+                    _isChecked3 = value!;
+                  });
+                },
+              ),
+              const SizedBox(height: 80),
+              buildElevatedButton(context),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget buildHeaderContainer() {
+    return Container(
+      height: 80,
+      width: 376,
+      decoration: BoxDecoration(
+        color: const Color.fromARGB(255, 17, 67, 115),
+        borderRadius: BorderRadius.circular(10.0),
+      ),
+      child: const Center(
+        child: Text(
+          "PILIH PAKAN SAPI",
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 20,
+            fontFamily: 'Montserrat',
+            fontWeight: FontWeight.w800,
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget buildPakanMiniCard({
+    required String title,
+    required String imageUrl,
+    required bool? checkboxValue,
+    required Function(bool?) onChanged,
+  }) {
+    return Container(
+      height: 80,
+      width: double.maxFinite,
+      margin: const EdgeInsets.symmetric(vertical: 10),
+      decoration: BoxDecoration(
+        color: const Color.fromARGB(255, 17, 67, 115),
+        borderRadius: BorderRadius.circular(10.0),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Container(
+            width: 80,
+            height: 80,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10.0),
+            ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(10.0),
+              child: Image.network(
+                imageUrl,
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+          const SizedBox(width: 10),
+          Expanded(
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Container(
-                  height: 80,
-                  width: 376,
-                  decoration: BoxDecoration(
-                    color: const Color.fromARGB(
-                      255,
-                      17,
-                      67,
-                      115,
-                    ), // Background color
-                    borderRadius: BorderRadius.circular(
-                      10.0,
-                    ), // Rounded corners
-                  ),
-                  child: const Center(
-                    child: Text(
-                      "PILIH PAKAN SAPI",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20,
-                        fontFamily: 'Montserrat',
-                        fontWeight: FontWeight.w800,
-                      ),
-                    ),
+                Text(
+                  title,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                    fontFamily: 'Montserrat',
+                    fontWeight: FontWeight.w500,
                   ),
                 ),
-                const SizedBox(height: 40),
-
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      height: 100,
-                      width: 300,
-                      decoration: BoxDecoration(
-                        color: const Color.fromARGB(255, 17, 67, 115),
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                      child: Row(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: SvgPicture.asset('assets/rumput.svg'),
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          const Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                "RUMPUT GAJAH",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16,
-                                  fontFamily: 'Montserrat',
-                                  fontWeight: FontWeight.w500,
-                                  height: 0,
-                                ),
-                              ),
-                              Align(
-                                alignment: Alignment.bottomLeft,
-                                child: Text(
-                                  "Fiber 100%",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 10,
-                                    fontFamily: 'Montserrat',
-                                    fontWeight: FontWeight.normal,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      height: 50,
-                      width: 50,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          color: const Color.fromARGB(255, 17, 67, 115),
-                        ),
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                      child: Checkbox(
-                        value: _isChecked,
-                        onChanged: (bool? value) {
-                          setState(() {
-                            _isChecked = value!;
-                          });
-                        },
-                        visualDensity: VisualDensity.compact,
-                        activeColor: const Color.fromARGB(255, 17, 67, 115),
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 20),
-
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      height: 100,
-                      width: 300,
-                      decoration: BoxDecoration(
-                        color: const Color.fromARGB(255, 17, 67, 115),
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                      child: Row(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: SvgPicture.asset('assets/rumput.svg'),
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          const Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                "RUMPUT GAJAH",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16,
-                                  fontFamily: 'Montserrat',
-                                  fontWeight: FontWeight.w500,
-                                  height: 0,
-                                ),
-                              ),
-                              Align(
-                                alignment: Alignment.bottomLeft,
-                                child: Text(
-                                  "Fiber 100%",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 10,
-                                    fontFamily: 'Montserrat',
-                                    fontWeight: FontWeight.normal,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      height: 50,
-                      width: 50,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          color: const Color.fromARGB(255, 17, 67, 115),
-                        ),
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                      child: Checkbox(
-                        value: _isChecked2,
-                        onChanged: (bool? value) {
-                          setState(() {
-                            _isChecked2 = value!;
-                          });
-                        },
-                        visualDensity: VisualDensity.compact,
-                        activeColor: const Color.fromARGB(255, 17, 67, 115),
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 20),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      height: 100,
-                      width: 300,
-                      decoration: BoxDecoration(
-                        color: const Color.fromARGB(255, 17, 67, 115),
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                      child: Row(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: SvgPicture.asset('assets/rumput.svg'),
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          const Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                "RUMPUT GAJAH",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16,
-                                  fontFamily: 'Montserrat',
-                                  fontWeight: FontWeight.w500,
-                                  height: 0,
-                                ),
-                              ),
-                              Align(
-                                alignment: Alignment.bottomLeft,
-                                child: Text(
-                                  "Fiber 100%",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 10,
-                                    fontFamily: 'Montserrat',
-                                    fontWeight: FontWeight.normal,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      height: 50,
-                      width: 50,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          color: const Color.fromARGB(255, 17, 67, 115),
-                        ),
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                      child: Checkbox(
-                        value: _isChecked3,
-                        onChanged: (bool? value) {
-                          setState(() {
-                            _isChecked3 = value!;
-                          });
-                        },
-                        visualDensity: VisualDensity.compact,
-                        activeColor: const Color.fromARGB(255, 17, 67, 115),
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 20),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      height: 100,
-                      width: 300,
-                      decoration: BoxDecoration(
-                        color: const Color.fromARGB(255, 17, 67, 115),
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                      child: Row(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: SvgPicture.asset('assets/rumput.svg'),
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          const Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                "RUMPUT GAJAH",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16,
-                                  fontFamily: 'Montserrat',
-                                  fontWeight: FontWeight.w500,
-                                  height: 0,
-                                ),
-                              ),
-                              Align(
-                                alignment: Alignment.bottomLeft,
-                                child: Text(
-                                  "Fiber 100%",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 10,
-                                    fontFamily: 'Montserrat',
-                                    fontWeight: FontWeight.normal,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      height: 50,
-                      width: 50,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          color: const Color.fromARGB(255, 17, 67, 115),
-                        ),
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                      child: Checkbox(
-                        value: _isChecked4,
-                        onChanged: (bool? value) {
-                          setState(() {
-                            _isChecked4 = value!;
-                          });
-                        },
-                        visualDensity: VisualDensity.compact,
-                        activeColor: const Color.fromARGB(255, 17, 67, 115),
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 80),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const TakaranNutrisiHasilPage()));
-                  },
-                  style: ElevatedButton.styleFrom(
-                    minimumSize: const Size(376.0, 40.0),
-                    foregroundColor: Colors.white,
-                    backgroundColor:
-                        const Color.fromARGB(255, 136, 161, 185), // Warna teks
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(
-                          10.0), // Sesuaikan nilai sesuai keinginan
-                    ),
-                  ),
-                  child: const Text(
-                    "Selanjutnya",
-                    style: TextStyle(
-                      fontSize: 20, // Ukuran teks
-                      fontWeight: FontWeight.bold, // Ketebalan teks
-                    ),
-                  ),
-                ),
-                // SAPI jenis 2
               ],
             ),
           ),
+          Container(
+            width: 50,
+            height: 50,
+            decoration: BoxDecoration(
+              border: Border.all(
+                color: const Color.fromARGB(255, 17, 67, 115),
+              ),
+              borderRadius: BorderRadius.circular(10.0),
+            ),
+            child: Checkbox(
+              value: checkboxValue,
+              onChanged: onChanged,
+              visualDensity: VisualDensity.compact,
+              activeColor: const Color.fromARGB(255, 17, 67, 115),
+              checkColor: Colors.white,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget buildElevatedButton(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () {
+        if (_validateCheckboxes()) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => TakaranNutrisiHasilPage(),
+            ),
+          );
+        }
+      },
+      style: ElevatedButton.styleFrom(
+        minimumSize: const Size(376.0, 40.0),
+        backgroundColor: const Color.fromARGB(255, 17, 67, 115),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+      ),
+      child: const Text(
+        "Selanjutnya",
+        style: TextStyle(
+          fontSize: 20,
+          fontWeight: FontWeight.bold,
+          fontFamily: 'Montserrat',
+          color: Color.fromARGB(255, 255, 255, 255),
         ),
       ),
     );

@@ -1,7 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
-// import 'package:login_api/widgets/custom_bottom_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:login_api/pages/jumlah_sapi/jumlah_sapi.dart';
 
 class JenisSapiScreen extends StatefulWidget {
@@ -18,15 +16,70 @@ class _JenisSapiScreenState extends State<JenisSapiScreen> {
     await FirebaseAuth.instance.signOut();
   }
 
+  Widget _buildCowCard(String title, String imageAsset, String description) {
+    return InkWell(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const TakaranNutrisiSapiPage()),
+        );
+      },
+      child: Card(
+        elevation: 3,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+        child: Column(
+          children: [
+            Container(
+              height: 120,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: NetworkImage(imageAsset),
+                  fit: BoxFit.cover,
+                ),
+                borderRadius: const BorderRadius.vertical(top: Radius.circular(10.0)),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                title,
+                style: const TextStyle(
+                  color: Colors.black,
+                  fontSize: 16,
+                  fontFamily: 'Poppins',
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                description,
+                style: const TextStyle(
+                  color: Colors.grey,
+                  fontSize: 14,
+                  fontFamily: 'Poppins',
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(
-          title: const Center(
-            child:
-                Text('TAKARAN NUTRISI', style: TextStyle(color: Colors.white)),
-          ),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Center(
+            child: Text('TAKARAN NUTRISI', style: TextStyle(color: Colors.white,
+            fontWeight: FontWeight.bold,
+            fontFamily: 'Montserrat',),),
+            ),
           backgroundColor: const Color.fromARGB(255, 17, 67, 115),
           leading: IconButton(
             onPressed: () {
@@ -80,133 +133,27 @@ class _JenisSapiScreenState extends State<JenisSapiScreen> {
                   ),
                 ),
                 const SizedBox(height: 40),
-                Container(
-                  height: 24,
-                  width: 346,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(10.0),
-                  ),
-                  child: const Align(
-                    alignment: Alignment.topLeft,
-                    child: Text(
-                      "SAPI FARMER",
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 16,
-                        fontFamily: 'Poppins',
-                        fontWeight: FontWeight.w500,
-                        height: 0,
-                      ),
-                    ),
-                  ),
-                ),
-                InkWell(
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const TakaranNutrisiSapiPage()));
-                  },
-                  child: Container(
-                    height: 80,
-                    width: 376,
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(
-                          255, 17, 67, 115), // Background color
-                      borderRadius:
-                          BorderRadius.circular(10.0), // Rounded corners
-                    ),
-                    child: Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(
-                            right: 10,
-                          ),
-                          child: Transform.translate(
-                            offset: const Offset(20, 0), // Geser 10 piksel ke kanan
-                            child: SvgPicture.asset(
-                              'assets/jenis_sapi.svg',
-                              height: 60,
-                              width: 90,
-                            ),
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 156,
-                          child: Center(
-                            child: Text(
-                              "SAPI 1",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 20,
-                                fontFamily: 'Montserrat',
-                                fontWeight: FontWeight.w800,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                _buildCowCard(
+                  "Sapi Brahman",
+                  "https://cdnwpseller.gramedia.net/wp-content/uploads/2022/11/brahman-608x403.jpg",
+                  "Sapi brahman merupakan sapi yang berasal dari India dan merupakan keturunan dari bos indiscuss atau yang juga dikenal sebagai sapi zebu.",
                 ),
                 const SizedBox(height: 10),
-                InkWell(
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const TakaranNutrisiSapiPage()));
-                  },
-                  child: Container(
-                    height: 80,
-                    width: 376,
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(
-                          255, 17, 67, 115), // Background color
-                      borderRadius:
-                          BorderRadius.circular(10.0), // Rounded corners
-                    ),
-                    child: Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(
-                            right: 10,
-                          ),
-                          child: Transform.translate(
-                            offset: const Offset(20, 0), // Geser 10 piksel ke kanan
-                            child: SvgPicture.asset(
-                              'assets/jenis_sapi.svg',
-                              height: 60,
-                              width: 90,
-                            ),
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 156, // Adjusted width to accommodate the image
-                          child: Center(
-                            child: Text(
-                              "SAPI 2",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 20,
-                                fontFamily: 'Montserrat',
-                                fontWeight: FontWeight.w800,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                _buildCowCard(
+                  "Sapi Simental",
+                  "https://cdnwpseller.gramedia.net/wp-content/uploads/2022/11/sapi-simmental-608x426.jpg",
+                  "Sapi simmental merupakan jenis sapi yang berasal dari daerah Simme, Swiss. Jenis sapi perah dan pedaging ini mempunyai bentuk tubuh yang kekar dan berotot",
                 ),
-
-                // SAPI jenis
+                const SizedBox(height: 10),
+                _buildCowCard(
+                  "Sapi Bali",
+                  "https://cdnwpseller.gramedia.net/wp-content/uploads/2022/11/bali-608x341.jpg",
+                  "Sapi bali adalah salah satu ternak asli Indonesia. Jenis sapi pekerja ini memiliki tenaga dan daya tahan yang tinggi",
+                ),
               ],
             ),
           ),
         ),
-      ),
-    );
+      );
   }
 }

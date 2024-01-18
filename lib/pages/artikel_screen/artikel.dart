@@ -67,7 +67,7 @@ class _ArtikelScreenState extends State<ArtikelScreen> {
         return Card(
           color: Colors.white,
           shape: RoundedRectangleBorder(
-            side: BorderSide(width: 1, color: const Color(0xFF114373)),
+            side: const BorderSide(width: 1, color: Color(0xFF114373)),
             borderRadius: BorderRadius.circular(8),
           ),
           margin: const EdgeInsets.symmetric(vertical: 8),
@@ -94,7 +94,7 @@ class _ArtikelScreenState extends State<ArtikelScreen> {
                     height: 120,
                   ),
                 ),
-                SizedBox(width: 16),
+                const SizedBox(width: 16),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,

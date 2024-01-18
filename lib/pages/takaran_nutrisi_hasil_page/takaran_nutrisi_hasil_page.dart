@@ -1,358 +1,105 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
-// ignore_for_file: must_be_immutable
-class TakaranNutrisiHasilPage extends StatefulWidget {
-  const TakaranNutrisiHasilPage({Key? key})
-      : super(
-          key: key,
-        );
 
-  @override
-  State<TakaranNutrisiHasilPage> createState() =>
-      _TakaranNutrisiHasilPageState();
-}
 
-class _TakaranNutrisiHasilPageState extends State<TakaranNutrisiHasilPage> {
+
   void signUserOut() async {
     await FirebaseAuth.instance.signOut();
   }
 
+
+class TakaranNutrisiHasilPage extends StatelessWidget {
+  final List<Map<String, String>> data = [
+    {
+      'title': 'Rumput Hijau:',
+      'imageUrl': 'https://mesinpencacahrumput.com/wp-content/uploads/2019/01/Cara-Menanam-Rumput-Gajah.jpg',
+      'subtitle': 'Takaran: 30-35 kg/ekor/hari',
+    },
+    {
+      'title': 'Jerami:',
+      'imageUrl': 'https://www.ransumternak.distan.jogjaprov.go.id/img/artikel/fermentasi%20jerami.jpg',
+      'subtitle': 'Takaran: 6-8 kg/ekor/hari',
+    },
+    {
+      'title': 'Konsentrat:',
+      'imageUrl': 'https://dinpertanpangan.demakkab.go.id/wp-content/uploads/2021/06/SAPI-POTONG-SEHAT-BUTUH-KONSENTRAT.jpg',
+      'subtitle': 'Takaran: 1–2% dari bobot badan sapi/ekor/hari',
+    },
+  ];
+
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(
-          title: const Center(
-            child: Text('FORUM', style: TextStyle(color: Colors.white)),
-          ),
-          backgroundColor: const Color.fromARGB(255, 17, 67, 115),
-          leading: IconButton(
-            onPressed: () {
-              // Tambahkan aksi yang sesuai ketika ikon profil diklik
-            },
-            icon: const Icon(Icons.account_circle),
-            color: Colors.white,
-          ),
-          actions: [
-            IconButton(
-              onPressed: signUserOut,
-              icon: const Icon(Icons.logout),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Center(
+          child: Text(
+            'TAKARAN NUTRISI',
+            style: TextStyle(
               color: Colors.white,
-            )
-          ],
-        ),
-        body: Container(
-          width: double.maxFinite,
-          padding: const EdgeInsets.symmetric(
-            horizontal: 26,
-            vertical: 35,
-          ),
-          child: SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                _buildThirty(context),
-                const SizedBox(height: 24),
-                const Text("Nutrisi", style: TextStyle(fontWeight: FontWeight.w700)),
-                const SizedBox(height: 4),
-                const Divider(
-                  color: Colors.black,
-                ),
-                const SizedBox(height: 2),
-                Padding(
-                  padding: const EdgeInsets.only(right: 10),
-                  child: _buildSeventeen(
-                    context,
-                    userImage: "ME",
-                    value: "300",
-                    unit: "Kcal/kg",
-                  ),
-                ),
-                const SizedBox(height: 2),
-                const Divider(),
-                const SizedBox(height: 2),
-                Padding(
-                  padding: const EdgeInsets.only(right: 10),
-                  child: _buildSeventeen(
-                    context,
-                    userImage: "ME",
-                    value: "300",
-                    unit: "Kcal/kg",
-                  ),
-                ),
-                const SizedBox(height: 2),
-                const Divider(),
-                const SizedBox(height: 2),
-                Padding(
-                  padding: const EdgeInsets.only(right: 10),
-                  child: _buildSeventeen(
-                    context,
-                    userImage: "ME",
-                    value: "300",
-                    unit: "Kcal/kg",
-                  ),
-                ),
-                const SizedBox(height: 2),
-                const Divider(),
-                const SizedBox(height: 2),
-                Padding(
-                  padding: const EdgeInsets.only(right: 10),
-                  child: _buildSeventeen(
-                    context,
-                    userImage: "ME",
-                    value: "300",
-                    unit: "Kcal/kg",
-                  ),
-                ),
-                const SizedBox(height: 2),
-                const Divider(),
-                const SizedBox(height: 2),
-                Padding(
-                  padding: const EdgeInsets.only(right: 10),
-                  child: _buildSeventeen(
-                    context,
-                    userImage: "ME",
-                    value: "300",
-                    unit: "Kcal/kg",
-                  ),
-                ),
-                const SizedBox(height: 2),
-                const Divider(),
-                const SizedBox(height: 2),
-                Padding(
-                  padding: const EdgeInsets.only(right: 10),
-                  child: _buildSeventeen(
-                    context,
-                    userImage: "ME",
-                    value: "300",
-                    unit: "Kcal/kg",
-                  ),
-                ),
-                const SizedBox(height: 2),
-                const Divider(),
-                const SizedBox(height: 2),
-                Padding(
-                  padding: const EdgeInsets.only(right: 10),
-                  child: _buildSeventeen(
-                    context,
-                    userImage: "ME",
-                    value: "300",
-                    unit: "Kcal/kg",
-                  ),
-                ),
-                const SizedBox(height: 2),
-                const Divider(),
-                const SizedBox(height: 2),
-                Padding(
-                  padding: const EdgeInsets.only(right: 10),
-                  child: _buildSeventeen(
-                    context,
-                    userImage: "ME",
-                    value: "300",
-                    unit: "Kcal/kg",
-                  ),
-                ),
-                const SizedBox(height: 2),
-                const Divider(),
-                const SizedBox(height: 2),
-                Padding(
-                  padding: const EdgeInsets.only(right: 10),
-                  child: _buildSeventeen(
-                    context,
-                    userImage: "ME",
-                    value: "300",
-                    unit: "Kcal/kg",
-                  ),
-                ),
-                const SizedBox(height: 2),
-                const Divider(),
-                const SizedBox(height: 2),
-                Padding(
-                  padding: const EdgeInsets.only(right: 10),
-                  child: _buildSeventeen(
-                    context,
-                    userImage: "ME",
-                    value: "300",
-                    unit: "Kcal/kg",
-                  ),
-                ),
-                const SizedBox(height: 2),
-                const Divider(),
-                const SizedBox(height: 2),
-                Padding(
-                  padding: const EdgeInsets.only(right: 10),
-                  child: _buildSeventeen(
-                    context,
-                    userImage: "ME",
-                    value: "300",
-                    unit: "Kcal/kg",
-                  ),
-                ),
-                const SizedBox(height: 2),
-                const Divider(),
-                const SizedBox(height: 35),
-                _buildNote(context),
-              ],
+              fontWeight: FontWeight.bold,
+              fontFamily: 'Montserrat',
             ),
           ),
         ),
+        backgroundColor: const Color.fromARGB(255, 17, 67, 115),
+        actions: [
+          IconButton(
+            onPressed: signUserOut,
+            icon: const Icon(Icons.logout),
+            color: Colors.white,
+          )
+        ],
+      ),
+      body: ListView.builder(
+        itemCount: data.length,
+        itemBuilder: (context, index) {
+          return _buildCard(context, data[index]);
+        },
       ),
     );
   }
-}
 
-/// Section Widget
-Widget _buildThirty(BuildContext context) {
-  return Container(
-    padding: const EdgeInsets.symmetric(
-      horizontal: 10,
-      vertical: 14,
-    ),
-    decoration: BoxDecoration(
-      color: const Color(0xFF114373), // Ubah warna sesuai dengan kebutuhan Anda
-      borderRadius: BorderRadius.circular(
-          10), // Sesuaikan nilai sesuai dengan keinginan Anda
-    ),
-    child: Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        SvgPicture.asset(
-          'assets/jenis_sapi.svg',
-          height: 50,
-          width: 42,
-          // margin: EdgeInsets.symmetric(vertical: 10),
-        ),
-        const Padding(
-          padding: EdgeInsets.only(
-            left: 9,
-            bottom: 3,
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text("JENIS : SAPI FARMER STARTER",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 14,
-                    fontFamily: 'Montserrat',
-                    fontWeight: FontWeight.w300,
-                    height: 0,
-                  )),
-              SizedBox(height: 5),
-              Text("ME: ",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 10,
-                    fontFamily: 'Montserrat',
-                    fontWeight: FontWeight.w300,
-                    height: 0,
-                  )),
-              SizedBox(height: 4),
-              Text("CP: ",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 10,
-                    fontFamily: 'Montserrat',
-                    fontWeight: FontWeight.w300,
-                    height: 0,
-                  )),
-              SizedBox(height: 10),
-            ],
-          ),
-        ),
-      ],
-    ),
-  );
-}
-
-/// Section Widget
-Widget _buildNote(BuildContext context) {
-  return Container(
-    height: 180,
-    padding: const EdgeInsets.symmetric(
-      horizontal: 10,
-      vertical: 9,
-    ),
-    decoration: BoxDecoration(
-      color: const Color.fromARGB(
-          255, 48, 129, 208), // Ubah warna sesuai dengan kebutuhan Anda
-      borderRadius: BorderRadius.circular(
-          10), // Sesuaikan nilai sesuai dengan keinginan Anda
-    ),
-    child: Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const Padding(
-          padding: EdgeInsets.only(bottom: 117),
-          child: Text("CATATAN :",
-              style:
-                  TextStyle(color: Colors.white, fontWeight: FontWeight.w700)),
-        ),
-        Expanded(
-          child: Container(
-            width: 289,
-            margin: const EdgeInsets.only(
-              left: 5,
-              bottom: 67,
-            ),
-            child: const Text(
-              '''Sapi anda sehat, terus semangat agar bisa dibunuh dan mendapat cuan, setelah itu anda dapat rebahan rebahan dan rebahan.
-
-Bersemangatlah, selalu senyum dan k sabar
-''',
-              maxLines: 5,
-              style: TextStyle(color: Colors.white),
-              // overflow: TextOverflow.ellipatWhiteA700,
-            ),
-          ),
-        ),
-      ],
-    ),
-  );
-}
-
-/// Common widget
-Widget _buildSeventeen(
-  BuildContext context, {
-  required String userImage,
-  required String value,
-  required String unit,
-}) {
-  return Row(
-    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-    children: [
-      Text(
-        userImage,
-        style: const TextStyle(fontWeight: FontWeight.w700),
-        // style: theme.textTheme.labelLarge!.copyWith(
-        //   color: Colors.black,
-        // ),
+  Widget _buildCard(BuildContext context, Map<String, String> cardData) {
+    return Card(
+      color: const Color(0xFF114373),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10),
       ),
-      Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+      margin: EdgeInsets.all(16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            value,
-            style: const TextStyle(fontWeight: FontWeight.w700),
-            // style: theme.textTheme.labelLarge!.copyWith(
-            //   color: Colors.black,
-            // ),
-          ),
           Padding(
-            padding: const EdgeInsets.only(left: 80),
-            child: Text(
-              unit,
-              style: const TextStyle(fontWeight: FontWeight.w700),
-              // style: theme.textTheme.labelLarge!.copyWith(
-              //   color: Colors.black,
-              // ),
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  cardData['title']!,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                const SizedBox(height: 12),
+                Image.network(
+                  cardData['imageUrl']!,
+                  width: double.infinity,
+                  height: 150,
+                  fit: BoxFit.cover,
+                ),
+                const SizedBox(height: 12),
+                Text(
+                  cardData['subtitle']!,
+                  style: TextStyle(color: Colors.white, fontSize: 16),
+                ),
+              ],
             ),
           ),
         ],
       ),
-    ],
-  );
+    );
+  }
 }
