@@ -128,7 +128,7 @@ class _WallPostState extends State<WallPost> {
                     padding: const EdgeInsets.only(top: 10.0),
                     child: Row(
                       children: [
-                        Icon(Icons.access_time, size: 12, color: Colors.grey),
+                        const Icon(Icons.access_time, size: 12, color: Colors.grey),
                         const SizedBox(width: 4.0),
                         Text(
                           formatDate(widget.timestamp.toDate()),
