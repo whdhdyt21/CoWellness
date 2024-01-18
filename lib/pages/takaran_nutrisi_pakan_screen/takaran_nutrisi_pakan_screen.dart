@@ -162,7 +162,7 @@ class _TakaranNutrisiPakanScreenState extends State<TakaranNutrisiPakanScreen> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Container(
-            width: 285, // Adjust the width as needed
+            width: 235, // Adjust the width as needed
             height: 80,
             decoration: BoxDecoration(
               color: const Color.fromARGB(255, 17, 67, 115),

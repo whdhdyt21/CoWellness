@@ -85,7 +85,7 @@ class _TakaranNutrisiSapiPageState extends State<TakaranNutrisiSapiPage> {
                     "MASUKKAN TOTAL SAPI ANDA",
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 20,
+                      fontSize: 16,
                       fontFamily: 'Montserrat',
                       fontWeight: FontWeight.w800,
                     ),
@@ -99,7 +99,7 @@ class _TakaranNutrisiSapiPageState extends State<TakaranNutrisiSapiPage> {
                 children: [
                   Container(
                     height: 80,
-                    width: 260,
+                    width: 200,
                     decoration: BoxDecoration(
                       color: const Color.fromARGB(
                           255, 17, 67, 115), // Warna latar belakang
