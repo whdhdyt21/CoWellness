@@ -26,7 +26,7 @@ The login and registration features are integrated with Firebase and support Goo
 
 ![Login](screenshots/login.png)
 ![Register](screenshots/register.png)
-![Register with Google](screenshots/regis_wtih_google.png)
+![Register with Google](screenshots/regis_with_google.png)
 
 ### Nutrition Calculator
 
@@ -50,6 +50,54 @@ The discussion forum allows farmers to interact and share information, fostering
 
 ![Forum](screenshots/forum.png)
 
+## Getting Started
+
+### Prerequisites
+- **Flutter SDK:** Make sure you have Flutter installed on your machine. You can download it from [flutter.dev](https://flutter.dev).
+- **Firebase Account:** Set up a Firebase project for authentication and database services.
+
+### Installation
+
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/whdhdyt21/CoWellness.git
+    ```
+2. Navigate to the project directory:
+    ```bash
+    cd CoWellness
+    ```
+
+3. Install the required dependencies:
+    ```bash
+    flutter pub get
+    ```
+
+4. Set up Firebase:
+    - Follow the instructions on the Firebase Console to add your app.
+    - Download the `google-services.json` file for Android and place it in the `android/app` directory.
+    - Download the `GoogleService-Info.plist` file for iOS and place it in the `ios/Runner` directory.
+
+### Running the App
+
+To run the app on an emulator or a physical device, use the following command:
+```bash
+flutter run
+```
+
+## Contributing
+
+Contributions are welcome! Please fork this repository and submit a pull request for any enhancements or bug fixes.
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/your-feature`).
+3. Commit your changes (`git commit -am 'Add new feature'`).
+4. Push to the branch (`git push origin feature/your-feature`).
+5. Create a new Pull Request.
+
+## Acknowledgements
+
+Thanks to everyone who has contributed to this project and helped improve it.
+
 ---
 
 **Hackfest 2024 - CoDify Team**
@@ -60,3 +108,5 @@ The discussion forum allows farmers to interact and share information, fostering
 - **Muhammad Rizki Irawan Wijaya** (Hipster)
 
 ---
+
+Feel free to customize this README according to your specific requirements and repository structure.
