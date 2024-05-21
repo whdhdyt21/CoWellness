@@ -1,71 +1,62 @@
-
 # CoWellness
-
-
 
 ![Logo](screenshots/icon_app.png)
 
+**CoWellness** is a mobile application designed to assist cattle farmers in monitoring the needs and health of their cattle. The app features a nutrition calculator for cattle feed and a reminder system for feeding times. We also provide informative articles detailing various cattle diseases and their symptoms. To prevent the spread of diseases, the app includes a Drop Point feature that shows the nearest cattle waste processing centers. Additionally, we've incorporated a discussion forum to enhance the user experience, allowing farmers to interact and share valuable information with each other.
 
-**CoWellness** adalah aplikasi berbasis mobile platform untuk mengakomodasi para peternak sapi dalam memantau kebutuhan serta kesehatan sapi. Pemantauan yang berkaitan dengan kebutuhan sapi dilakukan dengan fitur takaran pangan sapi, serta fitur pengingat (Reminder) untuk waktu pemberian pangan. Kami menyediakan fitur artikel yang menjabarkan jenis-jenis penyakit pada sapi, serta ciri-ciri sapi terjangkit penyakit tersebut. Selain itu, sebagai tindak pencegahan terhadap merebaknya penyakit pada sapi, kami membuat fitur Drop Point. Fitur Drop Point merupakan fitur yang menampilkan pusat pengolahan limbah kotoran sapi terdekat yang dapat dijangkau oleh para peternak. Untuk lebih menekankan kenyamanan para peternak dalam aplikasi yang kami rancang, kami juga menambahkan fitur forum diskusi yang dimana para peternak dapat berinteraksi antar satu sama lain, sehingga mereka dapat berbagi informasi yang dapat menambah pengetahuan baru bagi mereka.
 ## Features
 
-- Takaran nutrisi pangan sapi
-- Reminder pemberi pakan dan vitamin
-- Drop point limbah sapi
-- Artikel tentang sapi
-- Forum diskusi peternak
-
-
+- **Cattle Nutrition Calculator:** Easily measure the right amount of nutrients for your cattle.
+- **Feeding and Vitamin Reminders:** Never miss a feeding or supplement schedule.
+- **Waste Drop Points:** Locate nearby cattle waste processing centers.
+- **Informative Articles:** Learn about cattle diseases and health tips.
+- **Discussion Forum:** Connect and share knowledge with fellow farmers.
 
 ## Tech Stack
 
-**Flutter** - framework
-
-**Firebase** - real-time data management and storage
-
-**Figma** - UI and UX design
-
-
+- **Flutter:** Framework for building the app.
+- **Firebase:** Real-time data management and storage.
+- **Figma:** UI and UX design.
 
 ## Screenshots
 
-* **Login & Register**
+### Login & Register
 
-Login dan Register sudah terconnect pada firebase dan bisa juga login menggunakan google login.
-<br>
+The login and registration features are integrated with Firebase and support Google login.
+
 ![Login](screenshots/login.png)
 ![Register](screenshots/register.png)
-![Register with google](screenshots/regis_wtih_google.png)
+![Register with Google](screenshots/regis_wtih_google.png)
 
-* **Takaran nutrisi**
-  
-Fitur takaran nutrisi sapi kami buat agar peternak dapat dengan mudah untuk menakar nutrisi dan vitamin yang diberikan kepada sapi mereka.
-<br>
-![Jenis sapi](screenshots/jenis_sapi.png)
-![Jumlah sapi](screenshots/jumlah_sapi.png)
-![Jenis pakan](screenshots/jenis_pakan.png)
-![Hasil takaran](screenshots/hasil_takaran.png)
+### Nutrition Calculator
 
-* **Artikel**
+This feature helps farmers easily calculate the appropriate nutrients and vitamins for their cattle.
 
-Fitur artikel yang menjabarkan jenis-jenis penyakit pada sapi, serta ciri-ciri sapi terjangkit penyakit tersebut dan tips-tips kesehatan sapi.
-<br>
-![Artikel](screenshots/artikel.png)
-![Detail Artikel](screenshots/detail_artikel.png)
+![Cattle Type](screenshots/jenis_sapi.png)
+![Number of Cattle](screenshots/jumlah_sapi.png)
+![Feed Type](screenshots/jenis_pakan.png)
+![Calculation Results](screenshots/hasil_takaran.png)
 
-* **Forum**
+### Articles
 
-Forum diskusi merupakan tempat para peternak dapat berinteraksi antar satu sama lain, sehingga mereka dapat berbagi informasi yang dapat menambah pengetahuan baru bagi mereka.
-<br>
+Access articles detailing various cattle diseases, their symptoms, and health tips.
+
+![Articles](screenshots/artikel.png)
+![Article Details](screenshots/detail_artikel.png)
+
+### Forum
+
+The discussion forum allows farmers to interact and share information, fostering a community of knowledge exchange.
+
 ![Forum](screenshots/forum.png)
 
+---
 
-<br>
+**Hackfest 2024 - CoDify Team**
 
-HACKFEST 2024 - CoDify Team
+- **Wahid Hidayat** (Hacker)
+- **Muhammad Nafis Hafi** (Hacker)
+- **Puan Bening Pastika** (Hustler)
+- **Muhammad Rizki Irawan Wijaya** (Hipster)
 
-Hacker: Muhammad Nafis Hafi<br>
-Hacker: Wahid Hidayat<br>
-Hustler: Puan Bening Pastika<br>
-Hipster: Muhammad Rizki Irawan Wijaya<br>
-<br>
+---
